@@ -22,7 +22,7 @@
     function sendData() {
         const data = document.getElementById("dataInput").value;
 
-        fetch("http://localhost:8080/data", {
+        fetch("/api/data", {
             method: "POST",
             headers: {
                 "Content-Type": "text/plain"
@@ -39,7 +39,7 @@
     }
 
     function getData() {
-        fetch("http://localhost:8080/data")
+        fetch("/api/data")
             .then(response => response.text())
             .then(result => {
                 document.getElementById("resultField").value = result;
